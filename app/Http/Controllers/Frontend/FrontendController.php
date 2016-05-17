@@ -17,7 +17,7 @@ class FrontendController extends Controller
     public function index()
     {
 
-        $users = User::all();
+        $users = User::orderByRaw("RAND()")->limit('6')->get();
         return view('frontend.index',compact('users'));
     }
 
