@@ -1,0 +1,371 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    font: 12px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    background: url(../image/bg.jpg) no-repeat;
+
+    background-size: 100% 100%;
+}
+
+.container{ 
+    max-width: 1000px;
+
+}
+.margin{
+	margin-top: 0px!important;
+}
+.pink-row{
+    width: 100%;
+    height: 50px;
+    background-color: #e71e79;
+    float: left;
+    margin: 100px 0px 0px 0px;
+
+}
+.sit-login {
+    
+    float: left;
+    margin: 2px 2px 2px 2px;
+
+}
+.sit-login .u-name, .p-word {
+    border: 1px solid #c7c7c7;
+    border-radius: 2px;
+    padding: 0px 5px 0px 0px; 
+    height: 22px;
+    width: 160px;
+    text-align: right;
+    float: right;
+    margin-left: 89px;
+
+}
+
+input[type=submit] {
+    background: url(../image/loging.png);
+    width: 94px;
+    height: 24px;
+    text-indent: -9999px;
+    border: 0;
+    cursor: pointer;
+}
+.logo {
+    float: left;
+    padding-top: 7.0px;
+    margin-left: 0px;
+    margin-top: 7%;
+    width: 100%;
+
+}
+.menu {
+    height: 20px;
+    background-color: #7CFC00;
+    float: left;
+    margin: 10px 0px 0px 0px;
+}
+.contentPane {
+
+    height: 353px;
+    width: 286;
+    background-color: #2072bc;
+    float: left;
+    margin: 10px 0px 0px 0px;
+    margin-top: 0%;
+    margin-bottom: 10%;
+}
+
+}
+
+.contentPane h2{
+    color: #FFFFFF;
+}
+.contentPane h3{
+
+    color: #FFFFFF;
+    font-size: 13px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+
+}
+.contentPane .userName, .Password{
+ border: 1px solid #c7c7c7;
+    border-radius: 2px;
+    padding: 0px 5px 0px 0px; 
+    height: 29px;
+    width: 240px;
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+.fa.fa-user, .fa.fa-lock, .fa.fa-envelope, .fa.fa-map-marker {
+    position: absolute;
+    margin: 7px;
+    font-size: 17px;
+    color: #b7b7b7;
+}
+
+.contentPane select {  
+    text-align-last:center; 
+}
+
+input#terms { 
+
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 20px;
+}
+
+.contentPane span{
+
+    text-align: left;
+    font-size: 12px;
+    color: #fff;
+    float: left;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.contentPane h2 {
+
+    font-size: 20px;
+
+}
+input#sign-up {
+    background: url(../image/sign-up.png);
+    width: 236px;
+    height: 34px;
+    border: 0;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 4px;
+    }
+
+input#new-updates {
+    background: url(../image/new-updates.png);
+    width: 188px;
+    height: 31px;
+    text-indent: -9999px;
+    border: 0;
+    cursor: pointer;
+}
+.details ul li {
+    width: 153px;
+    height: auto;
+    text-align: center;
+    list-style: outside none none;
+    float: left;
+    padding: 0px 15px;
+}
+.details ul li h2 {
+    font-size: 17px;
+    margin: 6px;
+}
+.details ul li p {
+    font-size: 11px;
+}
+input#get-details {
+    background: url(../image/get-details.png);
+    width: 88px;
+    height: 21px;
+    text-indent: -9999px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 30%;
+}
+
+input#feature-details {
+    background: url(../image/feature-details.png);
+    width: 188px;
+    height: 31px;
+    text-indent: -9999px;
+    border: 0;
+    cursor: pointer;
+    
+}
+.more-details {
+    width: 100%;
+    max-width: 342px;
+    float: left;
+    margin-right: 22px;
+}
+.more-details h2 {
+    margin-bottom: 18px;
+    color: #8a8a8a;
+    font-size: 20px;
+}
+.more-details p {
+    color: #8a8a8a;
+    margin-bottom: 19px;
+    text-align: justify;
+}
+input#more-details {
+    background: url(../image/more-details.png);
+    width: 117px;
+    height: 27px;
+    text-indent: -9999px;
+    border: 0;
+    cursor: pointer;
+    float: right;
+}
+
+.clear{
+  clear: both;
+} 
+
+
+.footer p {
+    color: #616161;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.about{
+    color: #8a8a8a;
+    text-align: justify;
+    float: left;
+    margin-top: 10px
+}
+
+.menubar{
+position:absolute;
+margin-top: 110px;
+width: 100%;
+height: 38px; 
+}
+
+.head{
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+}
+input#menuButtons{
+    height: 38px;
+    width: 70px;
+
+    background-color: #e71e79;
+      float: left;
+       display: block;
+       list-style: none;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    background-color: #e71e79;
+    margin-top: 68px;
+    color: #ffffff;
+    border: 1px solid #e71e79;
+    /* min-height: 26px; */
+    height: 32px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #e71e79!important;
+  background-color: #e71e79!important;
+}
+
+  .nav-tabs-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #e71e79;
+  }
+a.list-group-item:hover,
+button.list-group-item:hover,
+a.list-group-item:focus,
+button.list-group-item:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+.form-control{
+    margin-left: 5px;
+    margin-top: 74px;
+    border: 1px solid #e71e79;
+    border-radius: 2px;
+    padding: 0px 5px 0px 0px; 
+    height: 24px;
+    text-align: right;
+}
+
+input#Edit-Profile{
+    background: url(../image/editprofile.png);
+     width: 109px;
+    height: 27px;
+    text-indent: -9999px;
+    border: 0;
+}
+
+.profiles{
+    max-width: 221px;
+    margin-top: 20px;
+    border: 3px solid #FF00FF;
+
+    border-radius: 5px;
+
+}
+
+
+
+.form-group input[type="checkbox"] {
+    display: none
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none
+}
+
+input#GetDetails{
+
+      background: url(../image/GetDetails.png);
+     width: 107px;
+    height: 27px;
+    text-indent: -9999px;
+    border: 0; 
+}
+
+.btn-group-vertical{
+    width: =100%;
+    max-width: 350px;
+    width: 200px;
+
+}
+
+.bttn{
+    background-color: #eaf4fb;
+}
+
+.btn.focus, .btn:active{
+    background-color: #e71e79;
+}
+
+.ptextArea{
+    background-color: #e2e8e9;
+    width: 100%;
+    margin-top: 10px;
+
+}
