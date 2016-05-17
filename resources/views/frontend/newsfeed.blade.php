@@ -1,159 +1,118 @@
-<html ng-app>
-<head>
-	<title>Lorem Ipsum</title>
-
-
-	<link rel="stylesheet" type="text/css" href="{{url('front/css/bootstrap.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{url('front/css/main.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url('front/css/animate.css')}}">
-      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<script src="{{url('front/angular/angular.js')}}"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-
-<img src="{{url('front/image/header.png')}}" class="head">
-<img src="{{url('front/image/bar.jpg')}}" class="menubar">
-
-	<div class="container">
-			<div style="margin-top:40px"></div>
-
-
-
-
+@extends('frontend.layouts.app')
+@section('content')
 <!--This is a comment. Comments are not displayed in the browser-->
 
-		<div class="row">
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
 
-            <div class="col-md-2">
-				<div class="logo">
-                    <img src="{{url('front/image/logo.png')}}" alt="" title="Logo">
+    <div class="row">
+      <div class="col s4">
+        <div class="card-panel blue darken-3">
+          <span class="white-text">
+          <h5 class="center">Create Your Own Profile</h5>
 
-                </div>
-			</div>
-            <div class = "col-md-10">
+          <div class="row">
 
-			<div class="col-md-3">
+{!! Form::open(['url' => 'register', 'class' => 'form-horizontal col s12']) !!}
 
-			</div>
-            <div class="col-md-3">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-11">
-                <div class="animated bounceInRight">
-                   <div class="sit-login">
+<div class="row">
 
-                        <form>
-                            <input type="text" ng-model="username" placeholder="User Name" class="u-name">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            </div>
+  <div class="input-field">
+    <i class="material-icons prefix">account_circle</i>
+    <input name="name" id="name" type="text" class="validate">
+    <label for="name">Name</label>
+  </div>
 
-            <div class="col-md-3">
-            <div class="col-md-1">
-                </div>
-                <div class="col-md-11">
-                <div class="animated bounceInRight">
-                   <div class="sit-login">
-                        <form>
-                            <input type="text" name="Password" placeholder="Password" class="p-word">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            </div>
+  <div class="input-field">
+    <i class="material-icons prefix">lock_open</i>
+    <input name="password" id="password" type="password" class="validate">
+    <label for="password">Password</label>
+  </div>
 
-            <div class= "col-md-3">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-11">
-                    <div class="animated bounceInRight">
-                   <div class="sit-login">
-
-                        <form>
-                            <input type="submit" value="Loging" class="loging-button">
-                        </form>
-                    </div>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-             <div class="navbar-header" Style="margin-top: 40px;" >
-                <div class="navbar-toggle .navbar-collapse .pull-right " data-toggle="collapse" data-target="#navbar-collapse-1"  >
-                <button type="button" > <i class="fa fa-bars"></i></button>
-                </div>
-            </div>
-
-            <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
-
-                <nav>
-
-                    <ul class="nav navbar-nav">
-
-                        <li><a href="index.htm" class="dropdown-toggle">Home</a></li>
-                        <li><a href="NewsFeed.htm" class="dropdown-toggle">News Feed</a></li>
-                        <li><a href="Profile.htm" class="dropdown-toggle">Profile</a></li>
-                        <li><a href="About.htm" class="dropdown-toggle">About Us</a></li>
+  <div class="input-field">
+    <i class="material-icons prefix">lock_outline</i>
+    <input name="password_confirmation" id="password_confirmation" type="password" class="validate">
+    <label for="confirm-password">Confirm Password</label>
+  </div>
 
 
-                    </ul>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q">
+  <div class="input-field">
+    <i class="material-icons prefix">email_circle</i>
+    <input name="email" id="email" type="email" class="validate">
+    <label for="email">Email</label>
+  </div>
 
-                    </div>
+  <div class="input-field center">
+    <button class="btn waves-effect waves-light center pink" type="submit" name="action">Submit
+     <i class="material-icons right">send</i>
+   </button>
+  </div>
 
-                </nav>
-            </div>
+
+
+</div>
 
 
 
 
-           </div>
+{!! Form::close() !!}
 
-		</div>
+</div>
 
-<!--This is a comment. Comments are not displayed in the browser-->
-
-        <div class="row">
-
-        <div class="col-md-4">
-            <div class="contentPane">
-
-                <div>
-                    <form align= "center">
-                        <img src="{{url('front/image/roundProfilePic.png')}}" Style="margin-top: 60px;">
-                        <h2>Rishika Carder</h2>
-                        <p style="color: #FFFFFF;">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                        </p>
-                        <div>
-                         <input type="button" value="Edit Profile" class="Edit-Profile" id="Edit-Profile">
-                        </div>
-                        </form>
-                </div>
-            </div>
-
+        </span>
         </div>
-
-        <div class="col-md-8">
-            <img src="{{url('front/image/slider.png')}}">
-
+      </div>
+      <div class="col s8">
+        <div class="slider" style="height: 490px;">
+          <ul class="slides" style="height: 490px;">
+            <li>
+              <img src="https://lucky-date.com/images/foto1.jpg">
+              <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto2.jpg">
+              <!-- random image -->
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto3.jpg">
+              <!-- random image -->
+              <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto4.jpg">
+              <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
+
+
+  </div>
+</div>
 
 <!--This is a comment. Comments are not displayed in the browser-->
     <div class="row">
+			<div class="container">
 
 			@foreach($users as $dates)
 
-        <div class = "col-md-3">
+        <div class = "col s3">
             <div class = "Profiles">
                 <img src="{{url('front/image/NewsFeedPhoto.png')}}">
 								{{$dates->name}}
@@ -176,26 +135,6 @@
         </div>
 
 @endforeach
-
-    </div>
-
-
-
-
-    <footer>
-                <div class="footer">
-                    <p>&copy;2016 example.com. Privacy All Rights Reserved</p>
-                </div>
-            </footer>
-
-
-
-<div style="clear:both"></div>
 </div>
-</body>
-<footer>
-
-<script type="text/javascript" href="{{url('front/js/bootstrap.js')}}"></script>
-
-</footer>
-</html>
+    </div>
+@stop

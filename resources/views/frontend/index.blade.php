@@ -130,7 +130,7 @@
         <ul>
           <li>
             <img src="frontend/image/newupdatet/imag-01.jpg" alt="" title="Image">
-            <h5>{{$dates->name}}</h5>
+            <h6><b>{{$dates->name}}</b></h6>
             <p>{{$dates->summery}}</p>
             <input class="light-blue darken-3 waves-effect waves-light " type="button" value="Get Details" id="get-details">
           </li>
