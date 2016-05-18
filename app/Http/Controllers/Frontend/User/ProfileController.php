@@ -119,7 +119,7 @@ class ProfileController extends Controller
         $input = Request::all();
         message::create($input);
 
-        return redirect()->route('frontend.user.dashboard')->withFlashSuccess('Message Send succssfully !');
+        return redirect()->route('frontend.user.profile.myprofile')->withFlashSuccess('Message Send succssfully !');
 
     }
 

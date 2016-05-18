@@ -4,20 +4,20 @@
     <a id="logo-container" href="#" class="brand-logo">  Logo
     <ul class="right hide-on-med-and-down">
       <li><a href="/">Home</a></li>
-    <li><a href="newsfeed">News feed</a></li>
-    <li><a href="profile">Profile</a></li>
-    <li><a href="aboutus">About Us</a></li>
-    <li><a href="contactus">Contact Us</a></li>
+    <li><a href="{{url('newsfeed')}}">News feed</a></li>
+    <li><a href="{{url('profile')}}">Profile</a></li>
+    <li><a href="{{url('aboutus')}}">About Us</a></li>
+    <li><a href="{{url('contactus')}}">Contact Us</a></li>
 
 
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
       <li><a href="/">Home</a></li>
-      <li><a href="newsfeed">News feed</a></li>
-      <li><a href="profile">Profile</a></li>
-      <li><a href="aboutus">About Us</a></li>
-      <li><a href="contactus">Contact Us</a></li>
+      <li><a href="{{url('newsfeed')}}">News feed</a></li>
+      <li><a href="{{url('profile')}}">Profile</a></li>
+      <li><a href="{{url('aboutus')}}">About Us</a></li>
+      <li><a href="{{url('contactus')}}">Contact Us</a></li>
 
 
 

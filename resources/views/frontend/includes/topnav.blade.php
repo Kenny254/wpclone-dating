@@ -80,16 +80,27 @@
 
 
 @else
+
+
+
 <div class="sit-login">
   <div class="row">
     <div class="col s6 offset-s8">
 
-      Hello {{ Auth::user()->name }}
-      <a class="waves-effect waves-light btn" href="/logout">Logout</a>
+
+  <ul id="dropdown2" class="dropdown-content">
+    <li><a href="{{url('/profile')}}">Profile</a></li>
+    <li><a href="{{url('/profile/chat/1')}}">Chat<span class="new badge">2</span></a></li>
+    <li class="divider"></li>
+    <li><a href="{{url('/logout')}}">Logout</a></li>
+  </ul>
+  <a class="btn dropdown-button blue" href="#!" data-activates="dropdown2">Hi,{{ Auth::user()->name }}<i class="mdi-navigation-arrow-drop-down right"></i></a>
+
 
   </div>
   </div>
 
 </div>
+
 
 @endif

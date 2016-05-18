@@ -6,6 +6,9 @@
   <div class="container">
 
     <div class="row">
+
+@if (Auth::guest())
+
       <div class="col s4">
         <div class="card-panel blue darken-3">
           <span class="white-text">
@@ -100,7 +103,58 @@
           </ul>
         </div>
       </div>
+
+
+      @else
+
+      <div class="col s12">
+        <div class="slider" style="height: 490px;">
+          <ul class="slides" style="height: 490px;">
+            <li>
+              <img src="https://lucky-date.com/images/foto1.jpg">
+              <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto2.jpg">
+              <!-- random image -->
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto3.jpg">
+              <!-- random image -->
+              <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="https://lucky-date.com/images/foto4.jpg">
+              <!-- random image -->
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      @endif
+
+
     </div>
+
+
+
+
+
 
 
   </div>
@@ -132,7 +186,7 @@
             <img src="frontend/image/newupdatet/imag-01.jpg" alt="" title="Image">
             <h6><b>{{$dates->name}}</b></h6>
             <p>{{$dates->summery}}</p>
-            <input class="light-blue darken-3 waves-effect waves-light " type="button" value="Get Details" id="get-details">
+            <a href="/profile/{{$dates->id}}" class="waves-effect waves-light btn blue">Get Details</a>
           </li>
         </ul>
 

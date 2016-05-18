@@ -4,8 +4,8 @@
 
 <!-- CSS  -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="frontend/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-<link href="frontend/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="{{ url('frontend/css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="{{ url('frontend/css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
 
 <style media="screen">
   .head {
@@ -19,7 +19,7 @@
     font: 12px;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
-    background: url('frontend/image/bg.jpg') no-repeat;
+    background: url('{{url('frontend/image/bg.jpg')}}') no-repeat;
     background-size: 100% 100%;
   }
 </style>
