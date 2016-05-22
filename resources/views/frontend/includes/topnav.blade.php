@@ -1,11 +1,18 @@
 
 @if (Auth::guest())
+<div class="container">
 <div class="row">
 
-  <div class="col s6 offset-s8"><span class="flow-text">
+  <div class="col s6 offset-s8">
   <!-- Modal Trigger -->
 <a class="waves-effect waves-light btn modal-trigger" href="#login">Login</a>
-<a class="waves-effect waves-light btn modal-trigger" href="#register">Register</a>
+
+    </div>
+    
+    
+  </div>
+</div>
+
 
 <!-- Modal Structure -->
 <div id="login" class="modal">
@@ -74,9 +81,6 @@
 
 
 
-</span>
-  </div>
-</div>
 
 
 @else
@@ -85,7 +89,7 @@
 
 <div class="sit-login">
   <div class="row">
-    <div class="col s6 offset-s8">
+    <div class="col s6 offset-s6">
 
 
   <ul id="dropdown2" class="dropdown-content">

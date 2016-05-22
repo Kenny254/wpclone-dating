@@ -6,7 +6,7 @@
 </head>
 
 <body class="grey lighten-4">
-  <img class="responsive-imgbg head" src="{{ url('frontend/image/header.png') }}" />
+    <img class="responsive-imgbg head" src="{{ url('frontend/image/header.png') }}" /></img>
 
   @include('frontend.includes.topnav')
 

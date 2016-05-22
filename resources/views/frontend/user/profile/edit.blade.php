@@ -1,11 +1,11 @@
-@extends('frontend.layouts.master')
+@extends('frontend.layouts.app')
 
 @section('content')
     <div class="row">
 
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col s6 offset-s3">
 
-            <div class="panel panel-default">
+            <div class="card-panel">
                 <div class="panel-heading">{{ trans('labels.frontend.user.profile.update_information') }}</div>
 
                 <div class="panel-body">
@@ -20,9 +20,9 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('summery', trans('validation.attributes.frontend.summery'), ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('summery', 'Summery (75max Charactersxa) ', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::input('text', 'summery', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.summery')]) !!}
+                                {!! Form::input('text', 'summery', null, ['class' => 'form-control', 'placeholder' => 'User Summery','maxlength'=>'75']) !!}
                             </div>
                         </div>
 

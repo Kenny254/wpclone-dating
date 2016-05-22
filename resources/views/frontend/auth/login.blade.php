@@ -1,15 +1,17 @@
-@extends('frontend.layouts.master')
+@extends('frontend.layouts.app')
 
 @section('content')
-
+<div class="container"> 
+    
     <div class="row">
-
-        <div class="col-md-8 col-md-offset-2">
-
-            <div class="panel panel-default">
-                <div class="panel-heading">{{ trans('labels.frontend.auth.login_box_title') }}</div>
-
-                <div class="panel-body">
+      <div class="col s12 offset-6">
+        <div class="card-panel white">
+          <span class="black-text">
+              
+              <div class="panel-heading">{{ trans('labels.frontend.auth.login_box_title') }}</div>
+              
+              
+              <div class="panel-body">
 
                     {!! Form::open(['url' => 'login', 'class' => 'form-horizontal']) !!}
 
@@ -51,11 +53,17 @@
                         {!! $socialite_links !!}
                     </div>
                 </div><!-- panel body -->
-
-            </div><!-- panel -->
-
-        </div><!-- col-md-8 -->
-
-    </div><!-- row -->
+              
+              
+          </span>
+        </div>
+      </div>
+    </div>
+            
+        
+    
+    
+    
+</div> 
 
 @endsection
