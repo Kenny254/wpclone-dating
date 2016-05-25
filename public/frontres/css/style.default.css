@@ -1723,10 +1723,69 @@ address {
     border: 0;
     cursor: pointer;
 }
+
+#Edit-Profile {
+    background: url(../img/button/editprofile.png);
+    width: 109px;
+    height: 27px;
+    text-indent: -9999px;
+    border: 0;
+}
+
+#GetDetails {
+    background: url(../img/button/GetDetails.png);
+    width: 107px;
+    height: 27px;
+    text-indent: -9999px;
+    border: 0;
+}
 .qw{
     font-size: 12px;
 }
 .QE{
     text-align: justify;
     color: #8a8a8a;
+}
+.CC{
+    text-align: justify;
+}
+.AA{
+    color: #FFF;
+}
+.BB{
+    color: #FFF;
+    text-align: justify;
+}
+.CC{
+    margin-right: -11px;
+    margin-left: -11px;
+}
+.PP{
+    background: #FFFFFF!important;
+    border: solid 2px #e71e7a!important;
+}
+.NN{
+    padding: 1px 12px;
+    border: 0px solid transparent;
+    background:green;
+}
+
+.OO{
+    padding: 10px 10px 10px!important;
+}
+.MM{
+    text-align: justify;
+}
+#content .panel.sidebar-menu ul.nav ul li a{
+    padding-left: 0px!important;
+    padding: 6px 0px!important;
+}
+#content .panel.sidebar-menu ul.nav.category-menu li a{
+    font-weight: normal !important;
+}
+#content .panel.sidebar-menu ul.nav.category-menu {
+    margin-bottom: 5px!important;
+}
+.VV{
+     margin-bottom: 9%;
 }

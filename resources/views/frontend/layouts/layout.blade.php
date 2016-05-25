@@ -21,7 +21,7 @@
     <!-- /#navbar -->
 
     <!-- *** NAVBAR END *** -->
-
+  @include('includes.partials.messages')
 <img src="{{ url('frontres/img/header.png') }}" class="head">
 
     <div id="all">
@@ -50,6 +50,8 @@
     <script src="{{ url('frontres/js/bootstrap-hover-dropdown.js') }}"></script>
     <script src="{{ url('frontres/js/owl.carousel.min.js') }}"></script>
     <script src="{{ url('frontres/js/front.js') }}"></script>
+
+    
 </body>
 
 </html>

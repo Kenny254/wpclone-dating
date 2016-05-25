@@ -37,7 +37,7 @@
                           {!! Form::submit(trans('labels.frontend.auth.login_button'), ['class' => 'btn btn-primary', 'style' => 'margin-right:15px']) !!}
 
                           {!! link_to('password/reset', trans('labels.frontend.passwords.forgot_password')) !!}
-                            
+
                         </p>
 
                     {!! Form::close() !!}
@@ -64,6 +64,11 @@
             <ul class="menu">
                 <li><a href="#" data-toggle="modal" data-target="#login-modal">Notifications</a></li>
             </ul>
+            @roles(['Administrator', 'User'])
+            <ul class="menu">
+                <li><a href="#" data-toggle="modal" data-target="#login-modal">Dashboard</a></li>
+            </ul>
+            @endauth
         </div>
     </div>
 

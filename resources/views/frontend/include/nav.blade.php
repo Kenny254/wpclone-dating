@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+            <a class="navbar-brand home" href="/" data-animate-hover="bounce">
                 <img src="{{ url('frontres/img/logo.png') }}" alt="logo" class="hidden-xs" style="border-radius: 50%;width: 121px;margin-top: -37px;">
                 <img src="{{ url('frontres/img/logo-small.png') }}" alt="logo" class="visible-xs img-circle img-responsive" style="width: 29%;">
             </a>

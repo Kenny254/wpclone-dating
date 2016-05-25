@@ -5,7 +5,7 @@
 <div class="container">
     <div class="col-md-3">
         <div class="box same-height" style="background: #2072bc;">
-            <form>
+            {!! Form::open(['url' => 'register']) !!}
                 <div class="row" style="margin-top: -7%;">
                     <div class="col-md-12">
                         <h4 align="center"> Create Your Own Profile </h4>
@@ -14,34 +14,30 @@
                     <div class="col-sm-12">
                         <div class="form-group">
 
-                            <input type="text" class="form-control" placeholder="User Name" id="User Name">
+                            <input name="name" type="text" class="form-control" placeholder="User Name" id="User Name">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
 
-                            <input type="password" class="form-control" placeholder="Password" id="Password">
+                            <input name="password" type="password" class="form-control" placeholder="Password" id="Password">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
 
-                            <input type="password" class="form-control" placeholder="Conform Password" id="password">
+                            <input name="password_confirmation" type="password" class="form-control" placeholder="Conform Password" id="password">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
 
-                            <input type="text" class="form-control" placeholder="Email" id="email">
+                            <input name="email" type="email" class="form-control" placeholder="Email" id="email">
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <select class="option">
-                                <option value="sample0">Your Location</option>
-                                <option value="sample1">Sample-01</option>
-                                <option value="sample2">Sample-02</option>
-                            </select>
+                          <input name="summery" type="text" class="form-control" placeholder="summery" id="summery" maxlength="75">
                         </div>
                     </div>
                     <div class="col-sm-12">
@@ -55,7 +51,7 @@
                     </div>
                 </div>
                 <!-- /.row -->
-            </form>
+          {!! Form::close() !!}
         </div>
     </div>
     <div class="col-md-9">

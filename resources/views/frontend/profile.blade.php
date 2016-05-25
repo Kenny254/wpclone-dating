@@ -1,139 +1,166 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.layout')
 @section('content')
 
+@if (Auth::guest())
+<div class="container">
+    <div class="col-md-3">
+        <div class="box same-height" style="background: #2072bc;">
+            {!! Form::open(['url' => 'register']) !!}
+                <div class="row" style="margin-top: -7%;">
+                    <div class="col-md-12">
+                        <h4 align="center"> Create Your Own Profile </h4>
+                        <h5 align="center" style="color:#fff;font-size: 12px;">Lorem Ipsum is simply dummy text of t</h5>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
 
-<div class="section no-pad-bot" id="index-banner">
-  <div class="container">
+                            <input name="name" type="text" class="form-control" placeholder="User Name" id="User Name">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
 
-    <div class="row">
-      <div class="col s4">
-        <div class="card-panel blue darken-3">
-          <span class="white-text">
-            <div class="row center-align">
-<img class="responsive-img center-align" src="{{url('front/image/roundProfilePic.png')}}">
-</div>
-<div class="row center-align">
-  <b>{{ \auth::user()->name }}</b>
-</div>
+                            <input name="password" type="password" class="form-control" placeholder="Password" id="Password">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
 
-<div class="row center-align justify">
-  {{ \auth::user()->summery }}
-</div>
+                            <input name="password_confirmation" type="password" class="form-control" placeholder="Conform Password" id="password">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
 
-<div class="row right-align">
-  <a href="{{url('profile/edit')}}" class="waves-effect waves-light btn right-align"><i class="material-icons left">cloud</i>Update me</a>
-
-</div>
-
-        </span>
+                            <input name="email" type="email" class="form-control" placeholder="Email" id="email">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <select class="option">
+                                <option value="sample0">Your Location</option>
+                                <option value="sample1">Sample-01</option>
+                                <option value="sample2">Sample-02</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <input type="checkbox" name="terms" value="terms" id="terms">
+                            <span style="color:#fff; font-size: 11px;">I have read and accept the terms of use.</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary" id="sign-up"></button>
+                    </div>
+                </div>
+                <!-- /.row -->
+          {!! Form::close() !!}
         </div>
-      </div>
-      <div class="col s8">
-        <div class="slider" style="height: 490px;">
-          <ul class="slides" style="height: 490px;">
-            <li>
-              <img src="https://lucky-date.com/images/foto1.jpg">
-              <!-- random image -->
-              <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div>
-            </li>
-            <li>
-              <img src="https://lucky-date.com/images/foto2.jpg">
-              <!-- random image -->
-              <div class="caption left-align">
-                <h3>Left Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div>
-            </li>
-            <li>
-              <img src="https://lucky-date.com/images/foto3.jpg">
-              <!-- random image -->
-              <div class="caption right-align">
-                <h3>Right Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div>
-            </li>
-            <li>
-              <img src="https://lucky-date.com/images/foto4.jpg">
-              <!-- random image -->
-              <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
+    <div class="col-md-9">
+        <div id="main-slider">
+            <div class="item">
+                <img src="{{ url('frontres/img/main-slider1.jpg') }}" alt="" class="img-responsive">
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="{{ url('frontres/img/main-slider2.jpg') }}" alt="">
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="{{ url('frontres/img/main-slider3.jpg') }}" alt="">
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="{{ url('frontres/img/main-slider4.jpg') }}" alt="">
+            </div>
+        </div>
+        <!-- /#main-slider -->
+    </div>
+</div>
+@else
+<div id="content">
+
+    <div class="container">
+        <div class="col-md-3">
+            <div class="box same-height" style="background: #2072bc;">
+                <form>
+                    <div class="row CC">
+                        <div class="col-md-12">
+                            <img class="img-circle img-responsive" src="{{ url('frontres/img/profile/1.jpg') }}" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <h5 class="text-center AA">{{ \auth::user()->name }}</h5>
+                            <p class="text-center BB"> {{ \auth::user()->summery }}</p>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                          <a href="{{url('profile/edit')}}" class="btn btn-primary">Edit profile</a>
+
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div id="main-slider">
+                <div class="item">
+                    <img src="{{ url('frontres/img/main-slider1.jpg') }}" alt="" class="img-responsive">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider2.jpg') }}" alt="">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider3.jpg') }}" alt="">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider4.jpg') }}" alt="">
+                </div>
+            </div>
+            <!-- /#main-slider -->
+        </div>
+    </div>
+@endif
 
 
+<div id="profile">
+    <div class="container">
+        <div class="same-height-row">
+            <div class="col-md-4">
+                <div class="panel panel-default sidebar-menu">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked category-menu col-md-6">
+                        <li>
+                            <ul>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Birthday</a></li>
+                                <li><a href="#">Work & Education</a></li>
+                                <li><a href="#">Places You've Lived </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills nav-stacked category-menu col-md-6">
+                        <li>
+                            <ul>
+                                <li><a href="#">Contact Info</a></li>
+                                <li><a href="#">Family & Relationships</a></li>
+                                <li><a href="#">Details About You</a></li>
+                                <li><a href="#">Life Eventss</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p class="MM">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.t has survived not only five centuries, but also the leap into electronic.t has survived not only five centuries, but also the leap into electronic.</p>
+            </div>
+        </div>
 
+        <!-- /.row -->
 
-    <div class="row">
-  <div class="col s12">
-    <ul class="tabs">
-      <li class="tab col s3"><a class="active" href="#test1">About me</a></li>
-      <li class="tab col s3"><a  href="#test2">Life Events</a></li>
-      <li class="tab col s3 "><a href="#test3">Other Inforamtions</a></li>
-
-    </ul>
-  </div>
-  <div id="test1" class="col s12">
-    <ul class="collapsible" data-collapsible="accordion">
-   <li>
-     <div class="collapsible-header active"><i class="material-icons"></i>Summery</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.only 75 charcters</p></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Description</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet. Any long description</p></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Work & Education</div>
-     <div class="collapsible-body"><p>Work and education details.</p></div>
-   </li>
- </ul>
-  </div>
-
-
-  <div id="test2" class="col s12">
-    <ul class="collapsible" data-collapsible="accordion">
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Life Events</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Family & Relationships</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Places You've Lived</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-   </li>
- </ul>
-  </div>
-
-
-  <div id="test3" class="col s12">
-    <ul class="collapsible" data-collapsible="accordion">
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Contact Information</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-   </li>
-   <li>
-     <div class="collapsible-header"><i class="material-icons"></i>Photos of yours</div>
-     <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-   </li>
-
- </ul>
-  </div>
+    </div>
+    <!-- /.container -->
 
 </div>
 
-
-  </div>
-</div>
 
 @stop
