@@ -1789,3 +1789,25 @@ address {
 .VV{
      margin-bottom: 9%;
 }
+.DD{
+    margin-left: 50%!important;
+}
+
+.modal-header{
+    border-bottom: 1px solid #e71e7a;
+    background: #e71e7a;
+}
+.modal-title{
+    color: #FFF;
+}
+.LL{
+    height: 30px;
+}
+.HH{
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    background: #2072BC;
+    padding-top: 3px;
+    border-top: solid 1px #2072BC!important;
+}
