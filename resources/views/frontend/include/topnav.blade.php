@@ -66,7 +66,7 @@
             </ul>
             @roles(['Administrator', 'User'])
             <ul class="menu">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">Dashboard</a></li>
+                <li><a href="{{url('/admin/dashboard')}}">Dashboard</a></li>
             </ul>
             @endauth
         </div>

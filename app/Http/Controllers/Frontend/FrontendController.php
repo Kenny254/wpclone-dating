@@ -36,5 +36,15 @@ class FrontendController extends Controller
         return view('frontend.newsfeed',compact('users'));
     }
 
+    public function about()
+    {
+        return view('frontend.about');
+    }
+
+    public function contact()
+    {
+              return "Need Contact Page";
+    }
+
 
 }
