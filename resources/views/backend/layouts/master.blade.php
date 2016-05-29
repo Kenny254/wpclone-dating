@@ -10,12 +10,13 @@
 
         <!-- Meta -->
         <meta name="description" content="@yield('meta_description', 'Default Description')">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        <meta name="author" content="@yield('meta_author', 'Ruwan Ranganath')">
         @yield('meta')
 
         <!-- Styles -->
         @yield('before-styles-end')
-        {!! Html::style(elixir('css/backend.css')) !!}
+        <link href="{{ url('/build/css/backend-9cfa37282b.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+
         @yield('after-styles-end')
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -53,10 +54,12 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
-    {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
+
+    <script src="{{url('/js/vendor/bootstrap/bootstrap.min.js')}}" charset="utf-8"></script>
+
 
     @yield('before-scripts-end')
-    {!! HTML::script(elixir('js/backend.js')) !!}
+    <script src="/build/js/backend.js" charset="utf-8"></script>
     @yield('after-scripts-end')
     </body>
 </html>
