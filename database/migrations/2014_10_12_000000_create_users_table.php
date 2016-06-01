@@ -20,7 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('confirmation_code');
             $table->string('summery');
             $table->string('description');
-            $table->string('profilepic');
+            $table->string('haveprofilepic'); // yes r no 
+            $table->string('profilepicurl');
+            $table->string('country');
             $table->boolean('confirmed')->default(config('access.users.confirm_email') ? false : true);
             $table->rememberToken();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

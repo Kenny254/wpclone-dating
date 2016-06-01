@@ -1,0 +1,25 @@
+[33mcommit 1c6da0a63f2a0e716d1c4042895dfe4fd61d3361[m
+Author: Ruwan Ranganath <ruwanranganathz@gmail.com>
+Date:   Wed Jun 1 23:43:48 2016 +0530
+
+    changed
+
+[33mcommit 1dbaa23687ae1ffa61042303e4a934ffa7bbbf3c[m
+Author: Ruwan Ranganath <ruwanranganathz@gmail.com>
+Date:   Wed Jun 1 14:47:07 2016 +0530
+
+    slider to dynamic page
+
+[33mcommit 042fce06d57c660754aeab89a810c970d321225e[m
+Author: Ruwan Ranganath <ruwanranganathz@gmail.com>
+Date:   Wed Jun 1 14:24:51 2016 +0530
+
+    replaced  <input name="summery" type="text" class="form-control"
+    placeholder="summery" id="summery" maxlength="75">
+                           with country list in index page temporary
+
+[33mcommit 4ff24685159fdde63770c01ce58fe8fc4aadc525[m
+Author: Ruwan Ranganath <ruwanranganathz@gmail.com>
+Date:   Wed Jun 1 14:19:22 2016 +0530
+
+    fixed top bar color

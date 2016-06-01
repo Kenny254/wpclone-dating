@@ -116,7 +116,11 @@ class FrontendController extends Controller
        return view('frontend.about');
     }
 
+<<<<<<< HEAD
 //wha
+=======
+//test git
+>>>>>>> demo
 
 
        

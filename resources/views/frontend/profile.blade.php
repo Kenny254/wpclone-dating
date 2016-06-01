@@ -1,7 +1,55 @@
 @extends('frontend.layouts.layout')
 @section('content')
 
+<<<<<<< HEAD
 @include('frontend.include.slider')
+=======
+@if (Auth::guest())
+@include('frontend.include.registerbox')
+@else
+<div id="content">
+
+    <div class="container">
+        <div class="col-md-3">
+            <div class="box same-height" style="background: #2072bc;">
+                <form>
+                    <div class="row CC">
+                        <div class="col-md-12">
+                            <img class="img-circle img-responsive" src="{{ url('frontres/img/profile/1.jpg') }}" alt="">
+                        </div>
+                        <div class="col-md-12">
+                            <h5 class="text-center AA">{{ \auth::user()->name }}</h5>
+                            <p class="text-center BB"> {{ \auth::user()->summery }}</p>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                          <a href="{{url('profile/edit')}}" class="btn btn-primary">Edit profile</a>
+
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div id="main-slider">
+                <div class="item">
+                    <img src="{{ url('frontres/img/main-slider1.jpg') }}" alt="" class="img-responsive">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider2.jpg') }}" alt="">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider3.jpg') }}" alt="">
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ url('frontres/img/main-slider4.jpg') }}" alt="">
+                </div>
+            </div>
+            <!-- /#main-slider -->
+        </div>
+    </div>
+@endif
+>>>>>>> demo
 
 
 <div id="profile">
