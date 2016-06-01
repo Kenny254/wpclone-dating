@@ -144,14 +144,23 @@
                                     </div>  
                                     <!--Chat widget footer-->
                                     <div class="panel-footer">
+                                        {!! Form::open(['url' => 'profile/message', 'class' => 'form-horizontal']) !!}
                                         <div class="row">
                                             <div class="col-xs-9">
-                                                <input type="text" placeholder="Enter your text" class="form-control chat-input">
+                                                <input type="text"  name='message' placeholder="Enter your text" class="form-control chat-input">
                                             </div>
                                             <div class="col-xs-3">
                                                 <button class="btn btn-primary btn-block" type="submit">Send</button>
                                             </div>
                                         </div>
+                                          {{ Form::hidden('sent_usr_id', Auth::user()->id ) }}
+                                           {{ Form::hidden('received_usr_id', $user->id) }} 
+                                           {{ Form::hidden('sent_usr_name', Auth::user()->name ) }} 
+                                           {{ Form::hidden('received_usr_name', $user->name) }} 
+                                           {{ Form::hidden('reported', '0')}} 
+                                           {{ Form::hidden('readed', '0') }} 
+
+                                           {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>

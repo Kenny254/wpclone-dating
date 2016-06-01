@@ -28,6 +28,7 @@ class FrontendController extends Controller
 
           $users_msgs = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
+        ->where('readed', '=', '0')
         ->latest('created_at')
         ->distinct()->get();
 
