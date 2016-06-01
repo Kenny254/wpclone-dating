@@ -74,7 +74,8 @@ class EloquentUserRepository implements UserRepositoryContract
     {
         if ($provider) {
             $user = User::create([
-                'summery' => $data['summery'],
+                'country' => $data['country'],
+                'haveprofilepic' => $data['haveprofilepic'],
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => null,
@@ -84,7 +85,9 @@ class EloquentUserRepository implements UserRepositoryContract
             ]);
         } else {
             $user = User::create([
-                'summery' => $data['summery'],
+                
+                'country' => $data['country'],
+                'haveprofilepic' => $data['haveprofilepic'],
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
