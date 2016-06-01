@@ -43,7 +43,7 @@ class FrontendController extends Controller
 
     public function contact()
     {
-              return "Need Contact Page";
+              return view('frontend.contact');
     }
 
 
