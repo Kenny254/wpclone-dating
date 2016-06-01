@@ -6,7 +6,7 @@
         <div class="container">
             <div class="navbar-header">
 
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                <a class="navbar-brand home" href="/" data-animate-hover="bounce">
                     <img src="{{ url('frontres/img/logo.png') }}" alt="Obaju logo" class="hidden-xs" style="border-radius: 50%;width: 121px;margin-top: -37px;">
                     <img src="{{ url('frontres/img/logo-small.png') }}" alt="Obaju logo" class="visible-xs img-circle img-responsive" style="width: 29%;">
                 </a>
@@ -30,7 +30,8 @@
                 <li class="active"><a href="{{url('/')}}">Home</a></li>
                 <li class="#"><a href="{{url('newsfeed')}}">News Feed</a></li>
                 <li class="#"><a href="{{url('profile')}}">Profile</a></li>
-                <li class="#"><a href="{{url('aboutus')}}">About Us</a></li>
+                <li class="#"><a href="{{url('about')}}">About Us</a></li>
+                 <li class="#"><a href="{{url('contact')}}">Contact Us</a></li>
                 </ul>
 
             </div>
