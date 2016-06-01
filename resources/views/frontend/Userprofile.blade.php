@@ -19,7 +19,7 @@
                             <p class="text-center BB"> {{ $user->summery }}</p>
                         </div>
                         <div class="col-sm-12 text-center">
-                          <a href="/profile/chat/{{ $user->id }}" class="btn btn-info">Send Message</a>
+                          <a data-toggle="modal" data-target="#Chat-modal-user" href="#" class="btn btn-info">Send Message</a>
 
                         </div>
 
@@ -94,6 +94,71 @@
     <!-- /.container -->
 
 </div>
+
+
+
+        <!---------------Chat Model-------------------->
+        <div class="modal fade" id="Chat-modal-user" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="panel">
+                    
+                                <!--Chat widget header-->
+                                <div class="panel-heading">
+                                    <div class="panel-control">
+                                        <div class="btn-group">
+                                            <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#demo-chat-body"><i class="fa fa-chevron-down"></i></button>
+                                            <button type="button" class="btn btn-default" data-toggle="dropdown"><i class="fa fa-gear"></i></button>
+
+                                        </div>
+                                    </div>
+                                    <h3 class="panel-title">Chat</h3>
+                                </div>
+                    
+                                <!--Chat widget body-->
+                                <div id="demo-chat-body" class="collapse in">
+                                    <div class="nano" style="height:500px">
+                                        <div class="nano-content pad-all">
+                                            <ul class="list-unstyled media-block">
+                                            @foreach($usermsgs as $msgs)
+
+                                                <li class="mar-btm">
+                                                    <div class="media-left">
+                                                        <img src="img/chat/1.png" class="img-circle img-sm" alt="Profile Picture">
+                                                    </div>
+                                                    <div class="media-body pad-hor">
+                                                        <div class="speech">
+                                                            <a href="#" class="media-heading">{{$msgs->sent_usr_name}}</a>
+                                                            <p>{{$msgs->message}}</p>
+                                                            <p class="speech-time">
+                                                            <i class="fa fa-clock-o fa-fw"></i>{{$msgs->updated_at}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>  
+                                    <!--Chat widget footer-->
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-xs-9">
+                                                <input type="text" placeholder="Enter your text" class="form-control chat-input">
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <button class="btn btn-primary btn-block" type="submit">Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Chat -->
 
 
 @stop

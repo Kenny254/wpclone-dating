@@ -26,10 +26,15 @@ class FrontendController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
+          $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
          // if the user logged in 
 
         $users = User::orderByRaw("RAND()")->limit('6')->get();
-        return view('frontend.index',compact('users','users_msg'));
+        return view('frontend.index',compact('users','users_msg','users_msgs'));
 
     } else {
      // if the user logged in 
@@ -55,13 +60,20 @@ class FrontendController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
+
+                  $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
+
          // if the user logged in 
 
     
 
       $users = User::latest('created_at')->limit('8')->get(); // get all product
 
-        return view('frontend.newsfeed',compact('users','users_msg'));
+        return view('frontend.newsfeed',compact('users','users_msg','users_msgs'));
 
 
     } else {
@@ -87,10 +99,17 @@ class FrontendController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
+
+                  $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
+
          // if the user logged in 
 
     
-        return view('frontend.about',compact('users_msg'));
+        return view('frontend.about',compact('users_msg','users_msgs'));
    
     } else {
 
@@ -112,10 +131,17 @@ class FrontendController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
+
+                  $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
+
          // if the user logged in 
 
     
-        return view('frontend.contact',compact('users_msg'));
+        return view('frontend.contact',compact('users_msg','users_msgs'));
    
     } else {
 

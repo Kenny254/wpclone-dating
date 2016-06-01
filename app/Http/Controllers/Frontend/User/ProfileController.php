@@ -50,7 +50,9 @@ class ProfileController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
-        $messages = message::latest('created_at')->limit('20')->where('received_usr_id', '=', \Auth::user()->id)->get(); // get all product
+        $messages = message::latest('created_at')
+        ->limit('20')
+        ->where('received_usr_id', '=', \Auth::user()->id)->get(); // get all product
 
         return view('frontend.messages',compact('users_msg','messages'))
             ->withUser(access()->user());
@@ -63,8 +65,15 @@ class ProfileController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
+        $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
+
+
         $user =User::where('id', '=', \Auth::user()->id)->get();
-        return view('frontend.profile',compact('user','users_msg'))
+        return view('frontend.profile',compact('user','users_msg','users_msgs'))
             ->withUser(access()->user());
     }
 
@@ -92,9 +101,25 @@ class ProfileController extends Controller
     public function userprofile($id)
     {
 
+          $usermsgs=message::where('sent_usr_id', '=', $id )
+                      ->where('received_usr_id', '=', \Auth::user()->id )
+                      ->orWhere('sent_usr_id', '=', \Auth::user()->id )
+                      ->where('received_usr_id', '=', $id )
+                      ->orderBy('updated_at', 'asc')
+                      ->get();
+
+         $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->distinct()->get();
+
+
+         $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
 
         $user = User::findOrFail($id);
-        return view('frontend.Userprofile',compact('user'));
+        return view('frontend.Userprofile',compact('user','users_msg','usermsgs','users_msgs'));
 
     }
 
