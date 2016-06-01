@@ -20,8 +20,9 @@
                             <p class="text-center BB"> {{ $user->summery }}</p>
                         </div>
                         <div class="col-sm-12 text-center">
-                          <a data-toggle="modal" data-target="#Chat-modal-user" href="#" class="btn btn-info">Send Message</a>
-
+                            <form>
+                          <a  data-toggle="modal" data-target="#Chat-modal-user" href="#" class="btn btn-info">Send Message</a>
+                      </form>
                         </div>
 
                         <div class="col-sm-12 text-center">

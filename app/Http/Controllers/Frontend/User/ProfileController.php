@@ -62,13 +62,16 @@ class ProfileController extends Controller
     {
 
          $users_msg = DB::table('messages')
+        ->groupBy('sent_usr_id')
+        ->where('readed', '=', '0')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
 
         $users_msgs = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->latest('created_at')
-        ->distinct()->get();
+        ->groupBy('sent_usr_id')
+        ->distinct('send_usr_id')->get();
 
 
 
@@ -150,6 +153,27 @@ class ProfileController extends Controller
         message::create($input);
 
         return redirect()->route('frontend.user.profile.myprofile')->withFlashSuccess('Message Send succssfully !');
+
+    }
+
+
+        public function search()
+    {
+        $input = Request::all();
+        $gender = Request('gender');
+        $country = Request('country');
+        $propic = Request('propic');
+
+         $searching = User::where('gender','=',$gender)
+         ->where('country','=',$country)
+         ->where('haveprofilepic','=',$propic)
+        ->orderBy('name')
+        ->paginate(20);
+
+        dd($searching);
+
+        return "wwe";
+
 
     }
 

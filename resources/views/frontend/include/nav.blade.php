@@ -58,17 +58,23 @@
                         <h4 class="modal-title text-center"><i class="fa fa-search" aria-hidden="true"></i> SEARCH</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+
+
+
+
+
+{!! Form::open(['method'=>'GET','url'=>'/profile/search','role'=>'search'])  !!}
+                       
                             
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label class="col-md-4 col-xs-4" for="name">Name</label>
                                         <div class="col-md-4 col-xs-4">
-                                            <input type="radio"/> Bride
+                                            <input  name="gender" value="bride" type="radio"/> Bride
                                         </div>
                                         <div class="col-md-4 col-xs-4">
-                                            <input type="radio"/> Groom
+                                            <input name="gender" value="groom" type="radio"/> Groom
                                         </div>
                                     </div> 
                                 </div>      
@@ -358,16 +364,17 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="col-md-10">
-                                            Only Profiels With Photo <input type="radio"/>
+                                            Only Profiels With Photo <input name="propic" value"1" type="checkbox"/>
                                         </div>
                                         <div class="col-md-2">
-                                            <button type="search" class="btn btn-primary HH" id="search">Search</button>
+                                            <button type="submit" class="btn btn-primary HH" id="search">Search</button>
                                         </div>
                                         
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('confirmation_code');
             $table->string('summery');
+            $table->string('gender');
             $table->string('description');
             $table->string('haveprofilepic'); // yes r no 
             $table->string('profilepicurl');

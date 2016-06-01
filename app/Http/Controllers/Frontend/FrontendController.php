@@ -30,6 +30,7 @@ class FrontendController extends Controller
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->where('readed', '=', '0')
         ->latest('created_at')
+        ->groupBy('sent_usr_id')
         ->distinct()->get();
 
          // if the user logged in 
@@ -65,6 +66,7 @@ class FrontendController extends Controller
                   $users_msgs = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->latest('created_at')
+        ->groupBy('sent_usr_id')
         ->distinct()->get();
 
 
@@ -104,6 +106,7 @@ class FrontendController extends Controller
                   $users_msgs = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->latest('created_at')
+        ->groupBy('sent_usr_id')
         ->distinct()->get();
 
 
@@ -136,6 +139,7 @@ class FrontendController extends Controller
                   $users_msgs = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->latest('created_at')
+        ->groupBy('sent_usr_id')
         ->distinct()->get();
 
 
