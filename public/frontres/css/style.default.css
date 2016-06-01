@@ -25,7 +25,7 @@ h1 {
   font-size: 40px;
 }
 #top {
-  background: #555555;
+  background: #fff;
   padding: 10px 0;
 }
 #top .offer {
@@ -64,7 +64,7 @@ h1 {
   display: inline-block;
 }
 #top ul.menu > li a {
-  color: #eeeeee;
+  color: #212121;
 }
 #top ul.menu > li + li:before {
   content: "|\00a0";

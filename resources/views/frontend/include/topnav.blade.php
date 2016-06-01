@@ -46,8 +46,8 @@
 
                     {!! Form::close() !!}
 
-                    <p class="text-center text-muted">Not registered yet?</p>
-                    <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a></p>
+                    <p class="text-center text-muted">lorem ipsum ?</p>
+                    <p class="text-center text-muted"><a href="#"><strong>lorem ipsum</strong></a></p>
 
                 </div>
             </div>
