@@ -1,9 +1,8 @@
 @extends('frontend.layouts.layout')
 @section('content')
 
-<<<<<<< HEAD
-@include('frontend.include.slider')
-=======
+
+
 @if (Auth::guest())
 @include('frontend.include.registerbox')
 @else
@@ -49,7 +48,6 @@
         </div>
     </div>
 @endif
->>>>>>> demo
 
 
 <div id="profile">
