@@ -18,6 +18,9 @@
 <link href="{{ url('frontres/css/animate.min.css') }}" rel="stylesheet">
 <link href="{{ url('frontres/css/owl.carousel.css') }}" rel="stylesheet">
 <link href="{{ url('frontres/css/owl.theme.css') }}" rel="stylesheet">
+<link href="{{ url('frontres/css/nifty.min.css') }}" rel="stylesheet">
+
+
 
 <!-- theme stylesheet -->
 <link href="{{ url('frontres/css/style.default.css') }}" rel="stylesheet" id="theme-stylesheet">

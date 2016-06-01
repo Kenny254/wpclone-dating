@@ -63,7 +63,7 @@ trait ResetsPasswords
     public function reset(ResetPasswordRequest $request)
     {
         $credentials = $request->only(
-            'email', 'password', 'password_confirmation', 'token'
+            'email', 'summery', 'password', 'password_confirmation', 'token'
         );
 
         $response = Password::reset($credentials, function ($user, $password) {

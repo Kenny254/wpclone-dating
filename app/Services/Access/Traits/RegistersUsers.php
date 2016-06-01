@@ -30,8 +30,8 @@ trait RegistersUsers
         if (config('access.users.confirm_email')) {
             $user = $this->user->create($request->all());
             event(new UserRegistered($user));
-            dd ($request);
-          //  return redirect()->route('frontend.index')->withFlashSuccess(trans('exceptions.frontend.auth.confirmation.created_confirm'));
+        //    dump($request->all());
+           return redirect()->route('frontend.index')->withFlashSuccess(trans('exceptions.frontend.auth.confirmation.created_confirm'));
         } else {
             auth()->login($this->user->create($request->all()));
             event(new UserRegistered(access()->user()));
