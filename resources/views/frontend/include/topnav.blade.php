@@ -69,7 +69,7 @@
                     <li class="">
 							<a href="#"aria-expanded="false"  data-toggle="modal" data-target="#Message-modal">
 								<i class="fa fa-envelope fa-lg"></i>
-								<span class="badge badge-header badge-warning">4</span>
+								<span class="badge badge-header badge-warning">{{$users_msg}}</span>
 							</a>
 						</li>
                      @roles(['Administrator'])

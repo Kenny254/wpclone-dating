@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Access\User\User;
+use Auth;
+use DB;
 
 /**
  * Class FrontendController
@@ -17,8 +19,31 @@ class FrontendController extends Controller
     public function index()
     {
 
+      // if the user logged in 
+      if (Auth::check())
+{
+          $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+         // if the user logged in 
+
+        $users = User::orderByRaw("RAND()")->limit('6')->get();
+        return view('frontend.index',compact('users','users_msg'));
+
+} else {
+ // if the user logged in 
+
         $users = User::orderByRaw("RAND()")->limit('6')->get();
         return view('frontend.index',compact('users'));
+
+}
+
+
+       
+
+
+
     }
 
     /**
