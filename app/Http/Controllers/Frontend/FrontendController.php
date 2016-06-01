@@ -21,7 +21,7 @@ class FrontendController extends Controller
 
       // if the user logged in 
       if (Auth::check())
-{
+    {
           $users_msg = DB::table('messages')
         ->where('received_usr_id', '=', \Auth::user()->id)
         ->count();
@@ -31,44 +31,97 @@ class FrontendController extends Controller
         $users = User::orderByRaw("RAND()")->limit('6')->get();
         return view('frontend.index',compact('users','users_msg'));
 
-} else {
- // if the user logged in 
+    } else {
+     // if the user logged in 
 
         $users = User::orderByRaw("RAND()")->limit('6')->get();
         return view('frontend.index',compact('users'));
 
-}
-
-
-       
+  }
 
 
 
     }
 
-    /**
-     * @return \Illuminate\View\View
-     */
-    public function macros()
-    {
-        return view('frontend.macros');
-    }
 
     public function newsfeed()
     {
+
+
+
+       if (Auth::check())
+    {
+          $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+         // if the user logged in 
+
+    
+
+      $users = User::latest('created_at')->limit('8')->get(); // get all product
+
+        return view('frontend.newsfeed',compact('users','users_msg'));
+
+
+    } else {
+
       $users = User::latest('created_at')->limit('8')->get(); // get all product
 
         return view('frontend.newsfeed',compact('users'));
+
+
+    }
+
+
+
     }
 
     public function about()
     {
-        return view('frontend.about');
+
+
+           if (Auth::check())
+    {
+          $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+         // if the user logged in 
+
+    
+        return view('frontend.about',compact('users_msg'));
+   
+    } else {
+
+       return view('frontend.about');
+    }
+
+
+
+
+       
     }
 
     public function contact()
     {
-              return view('frontend.contact');
+
+       if (Auth::check())
+    {
+          $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+         // if the user logged in 
+
+    
+        return view('frontend.contact',compact('users_msg'));
+   
+    } else {
+
+      return view('frontend.contact');
+    }
+              
     }
 
 

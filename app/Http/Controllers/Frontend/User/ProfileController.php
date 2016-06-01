@@ -58,8 +58,13 @@ class ProfileController extends Controller
 
     public function myprofile()
     {
+
+         $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
         $user =User::where('id', '=', \Auth::user()->id)->get();
-        return view('frontend.profile',compact('user'))
+        return view('frontend.profile',compact('user','users_msg'))
             ->withUser(access()->user());
     }
 
