@@ -227,6 +227,11 @@ class EloquentUserRepository implements UserRepositoryContract
     {
         $user = $this->find($id);
         $user->name = $input['name'];
+        $user->summery = $input['summery'];
+        $user->gender = $input['gender'];
+        $user->country = $input['country'];
+        $user->country = $input['profilepicurl'];
+        
 
         if ($user->canChangeEmail()) {
             //Address is not current address

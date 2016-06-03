@@ -18,6 +18,12 @@ use App\Repositories\Frontend\Access\User\UserRepositoryContract;
 use Request;
 use DB;
 
+use Illuminate\Support\Facades\Input;
+use Validator;
+use Redirect;
+use Session;
+
+
 /**
  * Class ProfileController
  * @package App\Http\Controllers\Frontend
@@ -29,7 +35,27 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('frontend.user.profile.edit')
+
+
+  $users_msg = DB::table('messages')
+        ->groupBy('sent_usr_id')
+        ->where('readed', '=', '0')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+        $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->groupBy('sent_usr_id')
+        ->distinct('send_usr_id')->get();
+
+
+
+        $user =User::where('id', '=', \Auth::user()->id)->get();
+
+
+
+        return view('frontend.user.profile.edit',compact('user','users_msg','users_msgs'))
             ->withUser(access()->user());
     }
 
@@ -40,6 +66,8 @@ class ProfileController extends Controller
      */
     public function update(UserRepositoryContract $user, UpdateProfileRequest $request)
     {
+
+
         $user->updateProfile(access()->id(), $request->all());
         return redirect()->route('frontend.user.dashboard')->withFlashSuccess(trans('strings.frontend.user.profile_updated'));
     }
@@ -159,23 +187,83 @@ class ProfileController extends Controller
 
         public function search()
     {
+
+
+  $users_msg = DB::table('messages')
+        ->groupBy('sent_usr_id')
+        ->where('readed', '=', '0')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+        $users_msgs = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->latest('created_at')
+        ->groupBy('sent_usr_id')
+        ->distinct('send_usr_id')->get();
+
+
+
+        $user =User::where('id', '=', \Auth::user()->id)->get();
+
+
+
         $input = Request::all();
         $gender = Request('gender');
         $country = Request('country');
         $propic = Request('propic');
 
-         $searching = User::where('gender','=',$gender)
+    /*     $searching = User::where('gender','=',$gender)
          ->where('country','=',$country)
          ->where('haveprofilepic','=',$propic)
         ->orderBy('name')
-        ->paginate(20);
+        ->paginate(20); */
 
-        dd($searching);
+        $searching = User::get();
+        return view('frontend.search',compact('searching','user','users_msg','users_msgs'));
+       // return($searching);
 
-        return "wwe";
 
 
     }
+
+
+
+
+
+    public function upload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('upload')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+      $destinationPath = 'uploads/profiles'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = rand(11111,99999).'.'.$extension; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+      DB::table('users')
+            ->where('id', \Auth::user()->id)
+            ->update(['profilepicurl' => $fileName]);
+
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('profile/edit')->withFlashSuccess('Photo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('profile.edit');
+    }
+  }
+}
 
 
 

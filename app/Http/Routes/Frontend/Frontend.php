@@ -27,9 +27,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('profile/chat/{id}', 'ProfileController@chat')->name('frontend.user.profile.chat');
 
        
-
+Route::post('apply/upload', 'ProfileController@upload');
         Route::post('profile/report', 'ProfileController@reportsave')->name('frontend.user.profile.reportsave');
-
+        
         Route::post('profile/message', 'ProfileController@messagesend')->name('frontend.user.profile.messagesend');
     });
 });

@@ -3,7 +3,7 @@
 
 <head>
 @include('frontend.include.head')
-  <title> | HOME</title>
+
 </head>
 
 
@@ -50,6 +50,7 @@
     <script src="{{ url('frontres/js/bootstrap-hover-dropdown.js') }}"></script>
     <script src="{{ url('frontres/js/owl.carousel.min.js') }}"></script>
     <script src="{{ url('frontres/js/front.js') }}"></script>
+
 
     
 </body>

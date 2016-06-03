@@ -3,20 +3,6 @@
 
 
 
-<div class="container">
-    <div class="col-md-12">
-                    <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="Buscar" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-    </div>
-</div>
 
 
 
@@ -28,7 +14,7 @@ _________________________________________________________ -->
                 <div class="same-height-row">
                     <div class="col-sm-12">
 
-@foreach($users as $dates)
+@foreach($searching as $dates)
                         <div class="col-md-3">
                             <div class="item">
                                 <div class="product PP">
