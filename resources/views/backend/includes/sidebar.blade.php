@@ -41,7 +41,27 @@
                 </li>
             @endauth
 
-            <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
+
+
+
+                        <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
+                <a href="#">
+                    <span>UI Changes</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu {{ Active::pattern('admin/log-viewer*', 'menu-open') }}" style="display: none; {{ Active::pattern('admin/log-viewer*', 'display: block;') }}">
+                    <li class="{{ Active::pattern('admin/log-viewer') }}">
+                        <a href="{!! route('admin.logochange') !!}">Change Logo & Sliders</a>
+                    </li>
+                    <li class="{{ Active::pattern('admin/log-viewer/logs') }}">
+                        <a href="{!! url('admin/footerchange') !!}">Change Footer Image</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+                        <li class="{{ Active::pattern('admin/log-viewer*') }} treeview">
                 <a href="#">
                     <span>{{ trans('menus.backend.log-viewer.main') }}</span>
                     <i class="fa fa-angle-left pull-right"></i>
@@ -55,6 +75,8 @@
                     </li>
                 </ul>
             </li>
+
+
 
         </ul><!-- /.sidebar-menu -->
     </section>

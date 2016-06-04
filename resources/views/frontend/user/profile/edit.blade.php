@@ -58,15 +58,6 @@
                             </div>
                         </div>
 
-                      <div class="form-group">
-                            {!! Form::label('name', 'Image ', ['class' => 'col-md-4 control-label']) !!}
-                            <div class="col-md-6">
-                                
-                                 <input type="file" name="profilepicurl" id="fileToUpload" class="btn btn-primary">
-                            </div>
-                        </div>
-
-
                         <div class="form-group">
                             {!! Form::label('name', 'Gender', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">

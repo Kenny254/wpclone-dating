@@ -250,6 +250,17 @@ class ProfileController extends Controller
       Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
       // sending back with message
 
+    
+      $userpicurl =\Auth::user()->profilepicurl;
+      $urlpath = 'uploads/profiles/' ;
+
+      if (\File::exists($urlpath.$userpicurl)) {
+    unlink($urlpath.$userpicurl);
+} 
+      
+   
+
+
       DB::table('users')
             ->where('id', \Auth::user()->id)
             ->update(['profilepicurl' => $fileName]);
@@ -264,6 +275,273 @@ class ProfileController extends Controller
     }
   }
 }
+
+
+
+
+
+        public function logoupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/logochange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'logo.png')) {
+    unlink($urlpath.'logo.png');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'logo.png'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/logochange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/logochange');
+    }
+  }
+}
+
+
+
+
+
+           public function slideroneupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/logochange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'main-slider1.jpg')) {
+    unlink($urlpath.'main-slider1.jpg');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'main-slider1.jpg'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/logochange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/logochange');
+    }
+  }
+}
+
+
+
+
+           public function slidetwoupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/logochange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'main-slider2.jpg')) {
+    unlink($urlpath.'main-slider2.jpg');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'main-slider2.jpg'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/logochange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/logochange');
+    }
+  }
+}
+
+
+
+
+           public function sliderthreeupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/logochange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'main-slider3.jpg')) {
+    unlink($urlpath.'main-slider3.jpg');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'main-slider3.jpg'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/logochange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/logochange');
+    }
+  }
+}
+
+
+
+
+           public function sliderfourupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/logochange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'main-slider4.jpg')) {
+    unlink($urlpath.'main-slider4.jpg');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'main-slider4.jpg'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/logochange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/logochange');
+    }
+  }
+}
+
+
+           public function footeupload() {
+  // getting all of the post data
+  $file = array('image' => Input::file('image'));
+  // setting up rules
+  $rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+  // doing the validation, passing post data, rules and the messages
+  $validator = Validator::make($file, $rules);
+  if ($validator->fails()) {
+    // send back to the page with the input data and errors
+    return Redirect::to('admin/footerchange')->withInput()->withErrors($validator);
+  }
+  else {
+    // checking file is valid.
+    if (Input::file('image')->isValid()) {
+
+      
+      $urlpath = 'frontres/img/' ;
+
+      if (\File::exists($urlpath.'center-image.jpg')) {
+    unlink($urlpath.'center-image.jpg');
+} 
+      
+   
+      $destinationPath = 'frontres/img'; // upload path
+      $extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+      $fileName = 'center-image.jpg'; // renameing image
+      Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+      // sending back with message
+
+    
+      Session::flash('success', 'Upload successfully'); 
+      return Redirect::to('admin/footerchange')->withFlashSuccess('Logo upload succssfully !');
+    }
+    else {
+      // sending back with error message.
+      Session::flash('error', 'uploaded file is not valid');
+      return Redirect::to('admin/footerchange');
+    }
+  }
+}
+
+
+
 
 
 

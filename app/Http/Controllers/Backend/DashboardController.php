@@ -36,13 +36,13 @@ class DashboardController extends Controller
         $messages = message::latest('created_at')->limit('5')->where('received_usr_id', '=', \Auth::user()->id)->get(); // get all product
 // messages
 
-//report
-$usr_reports = DB::table('report')
-  ->where('resolved', '=', '0')
-  ->count();
+    //report
+    $usr_reports = DB::table('report')
+      ->where('resolved', '=', '0')
+      ->count();
 
-  $reports = report::latest('created_at')->limit('5')->where('resolved', '=', '0')->get(); // get all product
-// report
+      $reports = report::latest('created_at')->limit('5')->where('resolved', '=', '0')->get(); // get all product
+    // report
 
 
 
@@ -77,6 +77,72 @@ $usr_reports = DB::table('report')
       return view('backend.includes.header',compact('users_msg','messages','usr_reports','reports'));
 
     }
+
+
+
+        public function logochange()
+    {
+
+
+// Messages
+
+      $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+        $messages = message::latest('created_at')->limit('5')->where('received_usr_id', '=', \Auth::user()->id)->get(); // get all product
+// messages
+
+    //report
+    $usr_reports = DB::table('report')
+      ->where('resolved', '=', '0')
+      ->count();
+
+      $reports = report::latest('created_at')->limit('5')->where('resolved', '=', '0')->get(); // get all product
+    // report
+
+
+
+      return view('backend.logochange',compact('users_msg','messages','usr_reports','reports'));
+
+    }
+
+
+        public function footerchange()
+    {
+
+
+// Messages
+
+      $users_msg = DB::table('messages')
+        ->where('received_usr_id', '=', \Auth::user()->id)
+        ->count();
+
+        $messages = message::latest('created_at')->limit('5')->where('received_usr_id', '=', \Auth::user()->id)->get(); // get all product
+// messages
+
+    //report
+    $usr_reports = DB::table('report')
+      ->where('resolved', '=', '0')
+      ->count();
+
+      $reports = report::latest('created_at')->limit('5')->where('resolved', '=', '0')->get(); // get all product
+    // report
+
+
+
+      return view('backend.footerchange',compact('users_msg','messages','usr_reports','reports'));
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

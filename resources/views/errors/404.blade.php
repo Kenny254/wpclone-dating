@@ -54,6 +54,7 @@
     <body>
         <h1>{{ trans('http.404.title') }}</h1>
         <p>{{ trans('http.404.description') }}</p>
+        <p> <a href="/"> Go Back </a> </p>
     </body>
 </html>
 <!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

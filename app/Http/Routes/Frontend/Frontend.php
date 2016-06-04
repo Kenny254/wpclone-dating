@@ -28,6 +28,14 @@ Route::group(['middleware' => 'auth'], function () {
 
        
 Route::post('apply/upload', 'ProfileController@upload');
+
+Route::post('apply/logoupload', 'ProfileController@logoupload');
+Route::post('apply/slideroneupload', 'ProfileController@slideroneupload');
+Route::post('apply/slidetwoupload', 'ProfileController@slidetwoupload');
+Route::post('apply/sliderthreeupload', 'ProfileController@sliderthreeupload');
+Route::post('apply/sliderfourupload', 'ProfileController@sliderfourupload');
+Route::post('apply/footerupload', 'ProfileController@footerupload');
+
         Route::post('profile/report', 'ProfileController@reportsave')->name('frontend.user.profile.reportsave');
         
         Route::post('profile/message', 'ProfileController@messagesend')->name('frontend.user.profile.messagesend');
